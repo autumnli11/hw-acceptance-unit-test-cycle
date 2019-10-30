@@ -1,0 +1,24 @@
+-# in app/views/movies/similar.html.haml
+
+%h1 Similar movies of #{@movie.title}
+
+
+%table#similar_movies
+  %thead
+    %tr
+      %th Movie Title
+      %th Rating
+      %th Description
+      %th Release Date
+      %th Director
+
+  %tbody
+    - @similar_movies.each do |movie|
+      %tr
+        %td= movie.title
+        %td= movie.rating
+        %td= movie.description
+        %td= movie.release_date
+        %td= movie.director
+
+= link_to 'Add new movie', new_movie_path
